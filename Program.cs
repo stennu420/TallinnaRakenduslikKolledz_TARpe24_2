@@ -1,4 +1,9 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using TallinnaRakenduslikKolled__TARpe24.Data;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<CollegeContext>(options =>
+    options.UseSqlite(builder.Configuration.GetConnectionString("CollegeContext") ?? throw new InvalidOperationException("Connection string 'CollegeContext' not found.")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
