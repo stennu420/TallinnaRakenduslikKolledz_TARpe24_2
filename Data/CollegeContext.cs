@@ -15,5 +15,6 @@ namespace TallinnaRakenduslikKolled__TARpe24.Data
         }
 
         public DbSet<TallinnaRakenduslikKolled__TARpe24.Models.Course> Course { get; set; } = default!;
+        public DbSet<TallinnaRakenduslikKolled__TARpe24.Models.Department> Department { get; set; } = default!;
     }
 }
